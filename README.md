@@ -8,16 +8,21 @@ A Quick demo of how to use the youtube_dl module in python
 
 
 ```bash
-    git clone url 
+    git clone https://github.com/olad5/youtube_dl_py_demo.git
 
+    cd youtube_dl_py_demo
+    
+    
     #Don't have pipenv installed; run
     pip install pipenv
 
-    cd youtube_dl_py_demo
 
     #Install dependencies
     pipenv install
-
+    
+    pipenv shell
+    
+    python3 main.py
 
 ```
 
