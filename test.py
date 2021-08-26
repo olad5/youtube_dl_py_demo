@@ -4,7 +4,7 @@ import json
 import pprint
 
 
-ydl = youtube_dl.YoutubeDL()
+ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s.%(ext)s'})
 # ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s.%(ext)s'})
 
 with ydl:
@@ -19,24 +19,41 @@ with ydl:
 
 
 
-# the line saves the result in a json file in the current directory
-with open('result.json', 'w') as f:
-    json_data  = json.dumps(result, indent=4)
-    f.write(json_data)
-sys.exit()
-if 'entries' in result:
-    # Can be a playlist or a list of videos
-    video = result['entries'][0]
-else:
-    # Just a video
-    video = result
+# # the line saves the result in a json file in the current directory
+# with open('result.json', 'w') as f:
+#     json_data  = json.dumps(result, indent=4)
+#     f.write(json_data)
+# # sys.exit()
+# if 'entries' in result:
+#     # Can be a playlist or a list of videos
+#     video = result['entries'][0]
+# else:
+#     # Just a video
+#     video = result
 
-print(video.keys())
+# print(video.keys())
+# # video_url = video['webpage_url']
+# title = video['title']
+# duration = video['duration']
+# # print(video_url)
+# print(title, duration)
+
+
+if __name__ == '__main__':
+    with open('result.json', 'w') as f:
+        json_data  = json.dumps(result, indent=4)
+        f.write(json_data)
+# sys.exit()
+    if 'entries' in result:
+        # Can be a playlist or a list of videos
+        video = result['entries'][0]
+    else:
+        # Just a video
+        video = result
+
+    print(video.keys())
 # video_url = video['webpage_url']
-title = video['title']
-duration = video['duration']
+    title = video['title']
+    duration = video['duration']
 # print(video_url)
-print(title, duration)
-
-
-
+    print(title, duration)
