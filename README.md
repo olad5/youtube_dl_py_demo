@@ -2,7 +2,8 @@
 
 
 
-A Quick demo of how to use the youtube_dl module in python
+A Quick demo of how to use the youtube_dl module in python.
+
 Whole documentation for the [youtube_dl ](https://github.com/ytdl-org/youtube-dl#options)
 
 
